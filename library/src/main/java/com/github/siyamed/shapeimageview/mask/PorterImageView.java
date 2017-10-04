@@ -97,6 +97,12 @@ public abstract class PorterImageView extends ImageView {
             invalidated = true;
         }
     }
+    
+    public void clearCanvas() {
+        if (drawableCanvas != null) {
+            drawableCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        }
+    }
 
     protected abstract void paintMaskCanvas(Canvas maskCanvas, Paint maskPaint, int width, int height);
 
